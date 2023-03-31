@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>View Department</h1>
+    <table class="book-table">
+      <tr>
+        <th>ID_DEP</th>
+        <th>DEP_NAME</th>
+        <th>DEP_AMOUNT</th>
+      </tr>
+      <tr>
+        <td><%= shelf.id_dep %></td>
+        <td><%= shelf.dep_name %></td>
+        <td><%= shelf.dep_amount %></td>
+      </tr>
+    </table>
+
+
+    <h1>View All Employee In Department</h1>
+    <table class="book-table">
+        <tr>
+            <th>ID_EMP</th>
+            <th>NAME</th>
+            <th>TEL</th>
+            <th><center>ID_DEP</center></th>
+          </tr>
+          <tr>
+            <% for(var i=0; i < inshelf.length; i++) { %>
+            <td><%= inshelf[i].id_emp %></td>
+            <td><%= inshelf[i].name %></td>
+            <td><%= inshelf[i].tel %></td>
+            <td><center><%= inshelf[i].id_dep %></center></td>
+          </tr>
+          <% } %>
+    </table>
+
+    <div class="link-center">
+        <a href="/update_shelf/<%= shelf.id_dep %>">Edit</a>
+        <a href="/delete_shelf/<%= shelf.id_dep %>">Delete</a>
+        <a href="/">Back to List</a>
+      </div>
+
+  </body>
+</html>
+

@@ -1,0 +1,27 @@
+<!-- update.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Shelf</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- <h1>Update Shelf</h1> -->
+    <form method="post" action="/delete_shelf_true/<%= shelf.id_dep %>"> 
+
+      <% if (shelf.dep_amount == 0) { %>
+        <p>สามารถลบ Department ได้ </p>
+        <!-- ถ้ากดจะทำในส่วนของ form -->
+        <input type="submit" value="Confirm" /> 
+        <a href="/">ยกเลิก</a>
+      <% } else { %>
+        <center>
+            <p>ยังมีพนักงานอยู่ใน Department กรุณาลบพนักงานออกให้หมดก่อน </p><br>
+            <a href="/">กลับสู่หน้าหลัก</a>
+        </center>
+      <% } %>
+
+    </form>
+
+  </body>
+</html>

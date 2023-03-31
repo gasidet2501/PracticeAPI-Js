@@ -1,0 +1,35 @@
+<!-- update.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Book</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>Update Book</h1>
+    <!-- ส่งกลับไปที่ index method post url/update/id -->
+    <form method="post" action="/update/<%= book.id_emp %>"> 
+      <label for="title">Name:</label>
+      <input type="text" id="title" name="name" value="<%= book.name %>" />
+      <br />
+      <label for="author">Tel:</label>
+      <input type="text" id="author" name="tel" value="<%= book.tel %>" />
+      <br />
+      <label for="shelf_id">ID_DEP:</label>
+      <select name="id_dep" >
+        <!-- ทำให้การเลือก shelf เป็นแบบ select เพื่อป้องกันไม่ให้เลือก shelf ที่ไม่มีอยู่ในระบบ -->
+        <% for(var i=0; i < shelf.length; i++) { %>
+          <option value="<%= shelf[i].id_dep %>">DEP ID : <%= shelf[i].id_dep %> Category : <%= shelf[i].dep_name %></option>
+        <% } %>
+
+      </select>
+      <br />
+      <input type="submit" value="Update" />
+    </form>
+    <div class="link-center">
+      <a href="/book/<%= book.id_emp %>">View</a>
+      <a href="/delete/<%= book.id_emp %>">Delete</a>
+      <a href="/">Back to List</a>
+    </div>
+  </body>
+</html>

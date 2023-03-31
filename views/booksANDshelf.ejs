@@ -1,0 +1,68 @@
+<!-- books.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Books</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h1>Employee</h1>
+  <table class="book-table">
+    <tr>
+      <th>ID_EMP</th>
+      <th>NAME</th>
+      <th>TEL</th>
+      <th><center>ID_DEP</center></th>
+      <th></th>
+
+    </tr>
+    <% for(var i=0; i < emp.length; i++) { %>
+    <tr>
+      <td><%= emp[i].id_emp %></td>
+      <td><%= emp[i].name %></td>
+      <td><%= emp[i].tel %></td>
+      <td><center><%= emp[i].id_dep %></center></td>
+      <td>
+        <a href="/book/<%= emp[i].id_emp %>">View</a>
+        <a href="/update/<%= emp[i].id_emp %>">Edit</a>
+        <a href="/delete/<%= emp[i].id_emp %>">Delete</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  <div class="link-center">
+    <a href="/create">Create New Employee</a>
+  </div>
+
+  <h1>Department</h1>
+  <table class="book-table">
+    <tr>
+      <th>ID_DEP</th>
+      <th>DEP_NAME</th>
+      <th><center>DEP_AMOUNT</center></th>
+      <th></th>
+
+    </tr>
+    <% for(var i=0; i < dep.length; i++) { %>
+    <tr>
+      <td><%= dep[i].id_dep %></td>
+      <td><%= dep[i].dep_name %></td>
+      <td><center><%= dep[i].dep_amount %></center></td>
+
+      <td>
+        <a href="/shelf/<%= dep[i].id_dep %>">View</a>
+        <a href="/update_shelf/<%= dep[i].id_dep %>">Edit</a>
+        <a href="/delete_shelf/<%= dep[i].id_dep %>">Delete</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  <div class="link-center">
+    <a href="/create_shelf">Create New Department</a>
+  </div>
+
+
+  
+
+</body>
+</html>

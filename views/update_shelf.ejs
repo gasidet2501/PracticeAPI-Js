@@ -1,0 +1,27 @@
+<!-- update.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Shelf</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>Update Shelf</h1>
+    <form method="post" action="/update_shelf/<%= shelf.id_dep %>"> 
+
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="dep_name" value="<%= shelf.dep_name %>"/>
+      <br />
+
+      <!-- เซ็ตให้จำนวน total_books มีค่าเท่าเดิม เพราะเราจะเปลี่ยนแปลงแค่ category -->
+      <input type="hidden" name="dep_amount" value="<%= shelf.dep_amount %>" />
+
+      <input type="submit" value="Update" />
+    </form>
+    <div class="link-center">
+      <a href="/shelf/<%= shelf.id_dep %>">View</a>
+      <a href="/delete_shelf/<%= shelf.id_dep %>">Delete</a>
+      <a href="/">Back to List</a>
+    </div>
+  </body>
+</html>

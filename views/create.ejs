@@ -1,0 +1,38 @@
+<!-- create.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Book</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>Create Book</h1>
+    <form method="post" action="/create">
+
+
+      <label for="title">Name:</label>
+      <input type="text" id="title" name="name" />
+      <br />
+      <label for="author">tel:</label>
+      <input type="text" id="author" name="tel" />
+      <br />
+      <label for="shelf_id">id_dep:</label>
+      <!-- <input type="text" id="shelf_id" name="shelf_id" /> -->
+
+      <select name="id_dep" >
+        <!-- ทำให้การเลือก shelf เป็นแบบ select เพื่อป้องกันไม่ให้เลือก shelf ที่ไม่มีอยู่ในระบบ -->
+        <% for(var i=0; i < shelf.length; i++) { %> 
+        <option value="<%= shelf[i].id_dep %>">DEP ID : <%= shelf[i].id_dep %> Category : <%= shelf[i].dep_name %></option>
+        <% } %>
+
+      </select>
+
+
+      <br />
+      <input type="submit" value="create" />
+    </form>
+    <div class="link-center">
+      <a href="/">Back to List</a>
+    </div>
+  </body>
+</html>

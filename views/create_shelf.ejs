@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Book</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>Create Shelf</h1>
+    <form method="post" action="/create_shelf">
+
+
+      <label for="category">Category:</label>
+      <input type="text" id="category" name="dep_name" />
+      <br />
+      <!-- เซ็ตจำนวนหนังสือให้เท่ากับ 0 เสมอ เมื่อจะสร้าง shelf ใหม่ -->
+      <input type="hidden" name="dep_amount" value="0" />
+
+      <input type="submit" value="create" />
+    </form>
+    <div class="link-center">
+      <a href="/">Back to List</a>
+    </div>
+  </body>
+</html>
