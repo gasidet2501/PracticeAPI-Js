@@ -8,7 +8,7 @@ PracticeAPI is a hands-on project created to simulate the conditions of a final 
 
 ### Features
 - Backend:
-  - CRUD operations for managing entities (e.g., books).
+  - CRUD operations for managing entities (e.g., employee, department).
   - Endpoint testing with Express.js.
 
 - Frontend:
